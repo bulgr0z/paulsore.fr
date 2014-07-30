@@ -1,0 +1,252 @@
+/*
+Theme Name: Paulsore
+Theme URI:
+Author: Paul Sore
+Description: Paul Sore WP Theme
+Version: 1.0
+*/
+
+// Clearfix mixin
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+// Master header du site
+header#masthead {
+
+  width: 820px;
+  margin: 50px auto 0 auto;
+
+  div#headmenu >ul{ // centrer les liens avec inline-block, reset ul
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    >li {
+      position: relative;
+      display: inline-block;
+      margin: 0 25px;
+    }
+  }
+
+  div#headmenu .menu-item.menu-logo { // forcer la taille du logo
+    vertical-align: middle;
+    img {
+      width: 208px;
+      height: auto;
+    }
+  }
+
+  li.menu-item a{
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  li.menu-item {
+    &.current-menu-item, &:hover {
+      text-decoration: underline;
+    }
+    &.current-menu-item::after {
+      content: ' ';
+      position: absolute;
+      top: 62px; left: 50%;
+      height: 15px; width: 15px;
+      margin-left: -7px;
+      background: url('images/fleche-menu.jpg') no-repeat 0px 0px;
+    }
+  }
+
+}
+
+// Contenu
+#content {
+
+  >article { // necessaire pour le post-background absolute
+    .clearfix();
+    position: relative;
+    margin-bottom: 95px;
+    &.fixed { // si le karou est fixed
+      height: 515px;
+    }
+  }
+
+  // image / karou de fond
+  article #post-background {
+
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+    background-size: cover;
+
+    >img { // image de fond
+      min-width: 100%;
+    }
+
+  }
+  // cas particulier du karou fluide
+  article.fluid #post-background {
+    >img {
+      min-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+  }
+
+  article .entry-content { // contenu overlay sur l'image / karou
+    background: rgba(255, 255, 255, 0.75);
+    padding: 50px 80px;
+    width: 475px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    position: absolute;
+    top: 50%; left: 50%;
+    z-index: 3;
+    max-height: 320px;
+    overflow: hidden;
+
+    &.hidden {
+      // est .hidden sur les pages caroussel (juste l'image, pas de texte)
+      display: none;
+    }
+  }
+
+  // navigation du caroussel, ne fait pas partie du markup du karou (doit etre hors overflow hidden)
+  .carounav {
+    position: absolute;
+    min-width: 100px;
+    height: 15px;
+    top: -20px;
+    right: 50px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+
+    .navprev, .navnext {
+      cursor: pointer;
+      height: 15px;
+    }
+    .navprev {
+      padding-left: 15px;
+      float: left;
+      background: url('images/karou-prev.jpg') no-repeat 0 3px;
+    }
+    .navnext {
+      float: right;
+      padding-right: 15px;
+      background: url('images/karou-next.jpg') no-repeat right 3px;
+    }
+  }
+
+  // Captions du carousel
+  #karou-caption {
+    position: absolute;
+    top: 0; right: 0;
+    height: 25px;
+    background: #000000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    padding: 0 15px;
+    line-height: 25px;
+    z-index: 3;
+
+    -webkit-transition: opacity .3s ease-in-out;
+       -moz-transition: opacity .3s ease-in-out;
+      -ms-transition: opacity .3s ease-in-out;
+       -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+  }
+
+  // gestion de la scrollbar
+  article .entry-content {
+    .scrollbar {
+      position: absolute;
+      right: 10px;
+      height: 100%;
+      width: 10px;
+      background: rgba(175, 175, 175, 0.6);
+
+      &.disable { display: none; }
+
+      .thumb {
+        position: absolute;
+        width: 10px;
+        background: rgba(175, 175, 175, 1);
+      }
+    }
+
+    .viewport {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      .overview {
+        width: 100%;
+        position: absolute;
+      }
+    }
+  }
+
+}
+
+.page-id-19, .page-id-17{
+  .overview, .overview p{
+    text-align: center;
+  }
+}
+
+
+// Carousel / Karou
+.karou-container {
+
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+  -webkit-transform-style: preserve-3d;
+
+  .karou-scroller {
+    position: relative;
+    top: 0;
+    height: 100%;
+
+    .karouel {
+      height: 100%;
+      overflow: hidden;
+      background-size: cover;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+}
+
+footer.site-footer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  color: #8b8b8b;
+
+  .left { float: left; margin-left: 10px }
+  .right { float: right; margin-right: 10px }
+
+  a { color: #8b8b8b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}

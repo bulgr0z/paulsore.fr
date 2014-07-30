@@ -1,0 +1,62 @@
+// out: ./style.css
+
+/*
+Theme Name: Paulsore
+Theme URI:
+Author: Paul Sore
+Description: Paul Sore WP Theme
+Version: 1.0
+*/
+
+// Clearfix mixin
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Variables
+//@green: rgb(104, 189, 130);
+@green: #68bd82;
+
+// Font faces
+@font-face {
+    font-family: 'opensansregular';
+    src: url('css/fonts/opensans/OpenSans-Regular-webfont.eot');
+    src: url('css/fonts/opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/opensans/OpenSans-Regular-webfont.woff') format('woff'),
+         url('css/fonts/opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('css/fonts/opensans/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensansbold';
+    src: url('css/fonts/opensans/OpenSans-Bold-webfont.eot');
+    src: url('css/fonts/opensans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/opensans/OpenSans-Bold-webfont.woff') format('woff'),
+         url('css/fonts/opensans/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('css/fonts/opensans/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+		font-family: 'creteround';
+		src: url('css/fonts/creteround/CreteRound-Regular.eot');
+		src: url('css/fonts/creteround/CreteRound-Regular.eot?#iefix') format('embedded-opentype'),
+				url('css/fonts/creteround/CreteRound-Regular.woff') format('woff'),
+				url('css/fonts/creteround/CreteRound-Regular.ttf') format('truetype'),
+				url('css/fonts/creteround/CreteRound-Regular.svg#creteround') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+
+@import (inline) "css/bootstrap.css";
+@import "css/theme.less";
