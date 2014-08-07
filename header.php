@@ -28,6 +28,8 @@
   <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
   <![endif]-->
 
+  <script type="text/javascript">var ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>'</script>
+
   <?php wp_head(); ?>
 
 </head>

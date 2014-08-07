@@ -6,6 +6,9 @@ require_once('inc/bulgroz_menu.php');
 ## GESTION DE LA GALLERY
 require_once('inc/bulgroz_gallery.php');
 
+## GESTION DE L'AJAX
+require_once('inc/bulgroz_ajax.php');
+
 ## GESTION DES PARAMETRES ADMIN
 require_once('inc/bulgroz_settings.php');
 
@@ -19,12 +22,15 @@ function bulgroz_scripts() {
   // ajouter le style du theme
   wp_enqueue_style( 'bulgroz-style', get_stylesheet_uri() );
 
+  // ajouter modernizr
+  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendors/modernizr2.8.3-custom.min.js', null, 01, true);
+
   // ajouter jQuery et les scripts qui en dépendent dans le footer
   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendors/jquery-1.10.2.min.js', null, 01, true);
-  wp_enqueue_script( 'karou', get_template_directory_uri() . '/js/vendors/karou.js', array( 'jquery' ), 01, true);
-  wp_enqueue_script( 'tinyscroll', get_template_directory_uri() . '/js/vendors/tinyscrollbar.js', array( 'jquery' ), 01, true);
+  #wp_enqueue_script( 'karou', get_template_directory_uri() . '/js/vendors/karou.js', array( 'jquery' ), 01, true);
+  #wp_enqueue_script( 'tinyscroll', get_template_directory_uri() . '/js/vendors/tinyscrollbar.js', array( 'jquery' ), 01, true);
 
-  wp_enqueue_script( 'joyeuse', get_template_directory_uri() . '/js/joyeuse.js', array( 'jquery' ), time(), true);
+  wp_enqueue_script( 'bulgroz', get_template_directory_uri() . '/js/bulgroz.js', array( 'jquery' ), time(), true);
 }
 
 function pre($dump) {
