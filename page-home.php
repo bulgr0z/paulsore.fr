@@ -20,7 +20,7 @@ get_header(); ?>
 
           <?php the_content() ?>
 
-          <a href="#" class="bulbtn green">Contact</a>
+          <a href="#footer" class="bulbtn green">Contact</a>
 
         <?php endwhile; ?>
 

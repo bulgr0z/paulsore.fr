@@ -131,7 +131,8 @@
     position: absolute;
     // right: 15px pour offset les margins de container-fluid
     top: 0; left: 0; right: 15px; bottom: 0;
-    background-color: rgba(102,102,102,0.5);
+    //background-color: rgba(102,102,102,0.5);
+    background-color: rgba(45, 45, 45, 0.85);
   }
 
   #content {
@@ -144,10 +145,9 @@
   }
 }
 
-// About
-#main-content.about {
+// Common About & Skills
+#main-content.about, #main-content.skills {
 
-  background: #fff;
   color: #000;
   margin-bottom: 100px;
 
@@ -180,6 +180,30 @@
     padding-right: 45%;
   }
 
+}
+
+#main-content.about {
+  background: #fff;
+}
+
+#main-content.skills {
+  margin-bottom: 0;
+  padding-bottom: 120px;
+  background: @green;
+  h1, h2 {
+    color: black;
+  }
+  .vantardise {
+    color: white;
+    font-family: "breeserif", Times New Roman, serif;
+    font-size: 35px;
+  }
+  .caption {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 120px;
+    text-align: center;
+  }
 }
 
 // Footer

@@ -1,5 +1,6 @@
 $(function() {
 
+	// Mail system
 	var mailbloc = new Mailbloc();
 
 	$('form#contact').on('submit', function(e) {
@@ -26,6 +27,11 @@ $(function() {
 		});
 
 	});
+
+	// Skills radial animations
+	$('.radial-progress[data-item="code"]').attr('data-progress', 75);
+	$('.radial-progress[data-item="integration"]').attr('data-progress', 90);
+	$('.radial-progress[data-item="design"]').attr('data-progress', 55);
 
 });
 
