@@ -33,6 +33,9 @@ $(function() {
 	$('.radial-progress[data-item="integration"]').attr('data-progress', 90);
 	$('.radial-progress[data-item="design"]').attr('data-progress', 55);
 
+	// Dirty fix lien blog
+	$('#menu-item-30 a').attr('target', '_blank');
+
 });
 
 // Gere les animations du bloc sendmail

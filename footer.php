@@ -44,6 +44,8 @@
             </div>
           </div>
 
+          <div id="madein">Made with <span class="icon flaticon-fresh6"></span> in Bordeaux</div>
+
         </div>
 
       </div>
