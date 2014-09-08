@@ -34,7 +34,7 @@
               <input type="text" id="name" name="client_mail" value="" placeholder="Votre nom">
               <input type="submit" id="submit" class="bulbtn black small" name="submit" value="envoyer">
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 contactinfo">
               <p class="legend">TELEPHONE</p>
               <h2 class="contact-item">06 23 88 44 14</h2>
               <p class="legend">EMAIL</p>

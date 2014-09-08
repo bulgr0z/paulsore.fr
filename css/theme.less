@@ -60,7 +60,9 @@
 
   .clearfix();
   background: #000;
-  padding: 0 0 0 70px;
+  @media (min-width: @screen-lg-min) {
+    padding: 0 0 0 70px;
+  }
 
   ul#menu-menu-site {
 
@@ -82,6 +84,11 @@
       list-style-type: none;
       background: #000;
 
+      width: 50%;
+      @media (min-width: @screen-lg-min) {
+        width: auto;
+      }
+
       // <li> actif
       &.current-menu-item {
         background: @green;
@@ -97,6 +104,7 @@
       a {
         padding: 25px 40px 25px 40px;
         display: block;
+        text-align: center;
       }
 
       // Couleurs des liens dans le <li>
@@ -131,7 +139,12 @@
     position: absolute;
     // right: 15px pour offset les margins de container-fluid
     top: 0; left: 0; right: 15px; bottom: 0;
-    //background-color: rgba(102,102,102,0.5);
+    padding-left: 15px;
+
+    @media (min-width: @screen-sm-min) {
+      top: 0; left: 0; right: 15px; bottom: 0;
+    }
+
     background-color: rgba(45, 45, 45, 0.85);
   }
 
@@ -176,8 +189,10 @@
     color: @darkblue;
     font-size: 18px;
     //border-left: 3px solid @darkblue;
-    padding-left: 15px;
-    padding-right: 45%;
+    @media (min-width: @screen-lg-min) {
+      padding-left: 15px;
+      padding-right: 45%;
+    }
   }
 
 }
@@ -209,7 +224,11 @@
 // Footer
 #footer {
   // TODO devrait etre responsive
-  height: 500px;
+
+  @media (min-width: @screen-lg-min) {
+    height: 500px;
+  }
+  height: 620px;
 }
 
 // Contact & blocs emails
@@ -305,6 +324,16 @@
     }
   }
 
+  .contactinfo {
+    clear: both;
+    padding-top: 20px;
+
+    @media (min-width: @screen-lg-min) {
+      clear: none;
+      padding-top: 0;
+    }
+  }
+
   // overlay loading
   #contact-loading {
 
@@ -380,9 +409,18 @@
 
 
   p.legend {
-    margin: 20px 0 0 0;
-    &:first-child {
-      margin: 30px 0 0 0;
+
+    margin: 5px;
+    float: left;
+    clear: left;
+
+    @media (min-width: @screen-lg-min) {
+      margin: 20px 0 0 0;
+      float: none;
+      clear: none;
+      &:first-child {
+        margin: 30px 0 0 0;
+      }
     }
   }
 
@@ -391,7 +429,13 @@
   }
 
   h2.contact-item {
-    margin: -5px 0 0 0;
+    float: right;
+    font-size: 12px;
+    @media (min-width: @screen-lg-min) {
+      margin: -5px 0 0 0;
+      font-size: 34px;
+      float: none;
+    }
   }
 
   // input fields
@@ -423,15 +467,29 @@
 
   input#name {
     height: 38px;
-    width: 70%;
     float: left;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media (min-width: @screen-lg-min) {
+      width: 70%;
+      margin-bottom: 0;
+    }
+
   }
 
   input#submit {
-    float: right;
-    margin-top: 10px;
-    text-transform: uppercase;
-    padding: 8px 33px;
+
+    width: 100%;
+
+    @media (min-width: @screen-lg-min) {
+      float: right;
+      margin-top: 10px;
+      text-transform: uppercase;
+      padding: 8px 33px;
+      width: auto;
+    }
+
   }
 
   #madein {
@@ -456,16 +514,41 @@
 
 }
 
+.col-sm-center {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    margin: auto;
+  }
+}
+
+.col-xs-center {
+  @media (max-width: @screen-xs-max) {
+    margin: auto;
+  }
+}
+
 h1 {
   color: #000;
-  font-size: 50px;
   margin-top: 0;
   margin-bottom: 36px;
+  font-size: 30px;
+
+  @media (min-width: @screen-lg-min) {
+    font-size: 50px;
+  }
+  @media (min-width: @screen-sm-min) {
+    font-size: 40px;
+  }
 }
 
 h2 {
-  font-size: 34px;
+  font-size: 20px;
   margin: 0;
+  @media (min-width: @screen-lg-min) {
+    font-size: 34px;
+  }
+  @media (min-width: @screen-sm-min) {
+    font-size: 28px;
+  }
 }
 
 h1, h2 {
@@ -479,4 +562,14 @@ h1.white, h2.white {
 
 h1.green, h2.green {
   color: @green;
+}
+
+.text-center {
+  text-align: center;
+}
+.no-offset {
+  margin-left: -15px;
+}
+.no-margin, .no-margin:before, .no-margin:after {
+  margin: 0 0 0 0 !important;
 }

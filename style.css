@@ -2104,7 +2104,6 @@ Version: 1.0
 }
 #headmenu {
   background: #000;
-  padding: 0 0 0 70px;
 }
 #headmenu:before,
 #headmenu:after {
@@ -2113,6 +2112,11 @@ Version: 1.0
 }
 #headmenu:after {
   clear: both;
+}
+@media (min-width: 1200px) {
+  #headmenu {
+    padding: 0 0 0 70px;
+  }
 }
 #headmenu ul#menu-menu-site {
   margin: 0;
@@ -2137,6 +2141,12 @@ Version: 1.0
   float: left;
   list-style-type: none;
   background: #000;
+  width: 50%;
+}
+@media (min-width: 1200px) {
+  #headmenu ul#menu-menu-site li {
+    width: auto;
+  }
 }
 #headmenu ul#menu-menu-site li.current-menu-item {
   background: #1abc9c;
@@ -2150,6 +2160,7 @@ Version: 1.0
 #headmenu ul#menu-menu-site li a {
   padding: 25px 40px 25px 40px;
   display: block;
+  text-align: center;
 }
 #headmenu ul#menu-menu-site li a {
   color: #1abc9c;
@@ -2173,7 +2184,16 @@ Version: 1.0
   left: 0;
   right: 15px;
   bottom: 0;
+  padding-left: 15px;
   background-color: rgba(45, 45, 45, 0.85);
+}
+@media (min-width: 768px) {
+  #main-content.home-background #primary.home-overlay {
+    top: 0;
+    left: 0;
+    right: 15px;
+    bottom: 0;
+  }
 }
 #main-content.home-background #content {
   position: relative;
@@ -2220,8 +2240,13 @@ Version: 1.0
   font-family: "opensansregular", Arial, sans-serif;
   color: #2c3e50;
   font-size: 18px;
-  padding-left: 15px;
-  padding-right: 45%;
+}
+@media (min-width: 1200px) {
+  #main-content.about .text,
+  #main-content.skills .text {
+    padding-left: 15px;
+    padding-right: 45%;
+  }
 }
 #main-content.about {
   background: #fff;
@@ -2247,7 +2272,12 @@ Version: 1.0
   text-align: center;
 }
 #footer {
-  height: 500px;
+  height: 620px;
+}
+@media (min-width: 1200px) {
+  #footer {
+    height: 500px;
+  }
 }
 #footer form#contact {
   position: relative;
@@ -2330,6 +2360,16 @@ Version: 1.0
   text-decoration: none;
   border-bottom: 4px solid #000;
 }
+#footer form#contact .contactinfo {
+  clear: both;
+  padding-top: 20px;
+}
+@media (min-width: 1200px) {
+  #footer form#contact .contactinfo {
+    clear: none;
+    padding-top: 0;
+  }
+}
 #footer form#contact #contact-loading {
   position: absolute;
   visibility: hidden;
@@ -2395,16 +2435,33 @@ Version: 1.0
   font-size: 12px;
 }
 #footer form#contact p.legend {
-  margin: 20px 0 0 0;
+  margin: 5px;
+  float: left;
+  clear: left;
 }
-#footer form#contact p.legend:first-child {
-  margin: 30px 0 0 0;
+@media (min-width: 1200px) {
+  #footer form#contact p.legend {
+    margin: 20px 0 0 0;
+    float: none;
+    clear: none;
+  }
+  #footer form#contact p.legend:first-child {
+    margin: 30px 0 0 0;
+  }
 }
 #footer form#contact p.warning {
   margin-top: 30px;
 }
 #footer form#contact h2.contact-item {
-  margin: -5px 0 0 0;
+  float: right;
+  font-size: 12px;
+}
+@media (min-width: 1200px) {
+  #footer form#contact h2.contact-item {
+    margin: -5px 0 0 0;
+    font-size: 34px;
+    float: none;
+  }
 }
 #footer form#contact textarea#message,
 #footer form#contact input#email,
@@ -2433,14 +2490,27 @@ Version: 1.0
 }
 #footer form#contact input#name {
   height: 38px;
-  width: 70%;
   float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media (min-width: 1200px) {
+  #footer form#contact input#name {
+    width: 70%;
+    margin-bottom: 0;
+  }
 }
 #footer form#contact input#submit {
-  float: right;
-  margin-top: 10px;
-  text-transform: uppercase;
-  padding: 8px 33px;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  #footer form#contact input#submit {
+    float: right;
+    margin-top: 10px;
+    text-transform: uppercase;
+    padding: 8px 33px;
+    width: auto;
+  }
 }
 #footer form#contact #madein {
   margin-top: 25px;
@@ -2457,15 +2527,45 @@ Version: 1.0
   font-size: 18px;
   font-family: "opensansregular", Arial, sans-serif;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-sm-center {
+    margin: auto;
+  }
+}
+@media (max-width: 767px) {
+  .col-xs-center {
+    margin: auto;
+  }
+}
 h1 {
   color: #000;
-  font-size: 50px;
   margin-top: 0;
   margin-bottom: 36px;
+  font-size: 30px;
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
 }
 h2 {
-  font-size: 34px;
+  font-size: 20px;
   margin: 0;
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 34px;
+  }
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
 }
 h1,
 h2 {
@@ -2479,6 +2579,17 @@ h2.white {
 h1.green,
 h2.green {
   color: #1abc9c;
+}
+.text-center {
+  text-align: center;
+}
+.no-offset {
+  margin-left: -15px;
+}
+.no-margin,
+.no-margin:before,
+.no-margin:after {
+  margin: 0 0 0 0 !important;
 }
 .radial-progress {
   margin-top: 50px;

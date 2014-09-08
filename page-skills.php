@@ -47,8 +47,8 @@ get_header(); ?>
                   );
 
               ?>
-                <div class="col-lg-4 item">
-                  <div class="radial-progress" data-item="<?php echo $items[$i] ?>" data-progress="0">
+                <div class="col-lg-4 col-sm-6 col-sm-center item">
+                  <div class="radial-progress col-sm-center col-xs-center" data-item="<?php echo $items[$i] ?>" data-progress="0">
                     <div class="circle">
                       <div class="mask full">
                         <div class="fill"></div>
@@ -64,7 +64,7 @@ get_header(); ?>
                       </div>
                     </div>
                   </div>
-                  <div class="caption"><?php echo $textcontent ?></div>
+                  <div class="caption col-sm-center col-xs-center"><?php echo $textcontent ?></div>
                 </div>
 
               <?php

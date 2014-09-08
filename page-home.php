@@ -14,7 +14,7 @@ get_header(); ?>
     }
     ?>
     <div id="primary" class="content-area home-overlay row">
-      <div id="content" class="site-content col-lg-offset-1 col-lg-6" role="main">
+      <div id="content" class="site-content col-lg-offset-1 col-lg-6 col-xs-12 col-sm-11" role="main">
 
         <?php while ( have_posts() ) : the_post(); ?>
 
