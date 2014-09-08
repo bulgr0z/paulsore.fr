@@ -2185,7 +2185,7 @@ Version: 1.0
   right: 15px;
   bottom: 0;
   padding-left: 15px;
-  background-color: rgba(45, 45, 45, 0.85);
+  background-color: rgba(45, 45, 45, 0.55);
 }
 @media (min-width: 768px) {
   #main-content.home-background #primary.home-overlay {
