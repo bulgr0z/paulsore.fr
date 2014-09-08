@@ -25,7 +25,8 @@ function bulgroz_sendmail() {
 
     $is_sent = wp_mail(get_bloginfo('admin_email'), 'Contact paulsore.fr', $_POST['message'], implode("\r\n", $headers));
   }
-
+  pre('sent ?');
+  pre($is_sent);
   echo json_encode(array(
     'result' => $is_sent
   ));
@@ -104,6 +105,7 @@ function bulgroz_email_checkspam($post, $server) {
   }
 
   if ( 'true' == $response[1] ) {
+    pre('spam!');
     return true; // c'est du spam :(
   }
 
