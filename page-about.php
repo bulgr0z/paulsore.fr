@@ -41,7 +41,7 @@ get_header(); ?>
                   );
 
                   echo '<div class="col-lg-4 col-sm-6 item">';
-                      echo '<i class="icon '. $icons[$i] .' text-center no-margin"></i>';
+                      echo '<i class="icon '. $icons[$i] .' text-sm-center no-margin"></i>';
                       echo '<div class="text">'. $textcontent .'</div>';
                   echo '</div>';
 
